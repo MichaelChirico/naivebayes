@@ -6,17 +6,22 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Caret, nproc and naivebayes • naivebayes</title>
-<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
-<script src="../lightswitch.js"></script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="icon" type="”image/svg+xml”" href="../favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" sizes="any" href="../favicon.ico">
+<link rel="manifest" href="../site.webmanifest">
+<!-- mathjax math --><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script><script>
+  window.MathJax = {
+    chtml: {
+      fontURL: "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/output/chtml/fonts/woff-v2"
+    }
+  };
+</script><script src="../lightswitch.js"></script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><script src="../deps/MathJax-3.2.2/tex-chtml.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Caret, nproc and naivebayes">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Caret, nproc and naivebayes">
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-7PD351XYFE"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -60,7 +65,6 @@
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://www.buymeacoffee.com/michalmajka" aria-label="BuyMeACoffee"><span class="fa fa-mug-hot"></span></a></li>
-<li class="nav-item"><a class="external-link nav-link" href="http://x.com/majkamichal" aria-label="X"><span class="fa fab fa-x-twitter"></span></a></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://github.com/majkamichal/naivebayes/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-lightswitch" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Light switch"><span class="fa fa-sun"></span></button>
@@ -92,7 +96,7 @@
     
     
 <div class="section level2">
-<h2 id="introduction">1) Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <p>The <code><a href="../reference/naive_bayes.html">naive_bayes()</a></code> function, a powerful tool for
 classification, is readily accessible through the highly regarded <a href="https://cran.r-project.org/web/packages/caret/index.html" class="external-link">Caret</a>
@@ -104,7 +108,7 @@ and <a href="https://cran.r-project.org/web/packages/nproc/" class="external-lin
 packages.</p>
 </div>
 <div class="section level2">
-<h2 id="naive-bayes-in-caret">2) Naive Bayes in Caret<a class="anchor" aria-label="anchor" href="#naive-bayes-in-caret"></a>
+<h2 id="naive-bayes-in-caret">Naive Bayes in Caret<a class="anchor" aria-label="anchor" href="#naive-bayes-in-caret"></a>
 </h2>
 <p>The first part showcases how to train a Naive Bayes model using the
 <code><a href="../reference/naive_bayes.html">naive_bayes()</a></code> function within the <code>caret</code>
@@ -125,7 +129,7 @@ understanding of how to train and optimize Naive Bayes models using the
 <code><a href="../reference/naive_bayes.html">naive_bayes()</a></code> function within the <code>caret</code>
 interface in R.</p>
 <div class="section level4">
-<h4 id="model-training-with-caret">2.1) Model Training with Caret<a class="anchor" aria-label="anchor" href="#model-training-with-caret"></a>
+<h4 id="model-training-with-caret">Model Training with Caret<a class="anchor" aria-label="anchor" href="#model-training-with-caret"></a>
 </h4>
 <p>The model is trained using the <code><a href="https://rdrr.io/pkg/caret/man/train.html" class="external-link">caret::train()</a></code> function,
 specifying <code>"naive_bayes"</code> as the method and setting
@@ -190,7 +194,7 @@ further analysis using the <code>caret</code> interface in R.</p>
 <code class="sourceCode R"><span><span class="co"># nb_object</span></span></code></pre></div>
 </div>
 <div class="section level4">
-<h4 id="parameter-tuning-with-caret">2.2) Parameter Tuning with Caret<a class="anchor" aria-label="anchor" href="#parameter-tuning-with-caret"></a>
+<h4 id="parameter-tuning-with-caret">Parameter Tuning with Caret<a class="anchor" aria-label="anchor" href="#parameter-tuning-with-caret"></a>
 </h4>
 <p>First, a tuning grid is defined using the <code><a href="https://rdrr.io/r/base/expand.grid.html" class="external-link">expand.grid()</a></code>
 function, which specifies different combinations of tuning parameters
@@ -234,7 +238,7 @@ the new data can be obtained with
 <span></span>
 <span><span class="co"># Visualize the tuning process</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">naive_bayes_via_caret2</span><span class="op">)</span></span></code></pre></div>
-<p><img src="caret,%20nproc%20and%20naivebayes_files/figure-html/example_caret2-1.png" width="700"></p>
+<p><img src="caret,%20nproc%20and%20naivebayes_files/figure-html/example_caret2-1.png" class="r-plt" width="700"></p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Perform classification </span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">naive_bayes_via_caret2</span>, newdata <span class="op">=</span> <span class="va">new</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -247,7 +251,7 @@ the Naive Bayes algorithm within the caret package in R.</p>
 </div>
 </div>
 <div class="section level2">
-<h2 id="naive-bayes-in-nproc">3) Naive Bayes in nproc<a class="anchor" aria-label="anchor" href="#naive-bayes-in-nproc"></a>
+<h2 id="naive-bayes-in-nproc">Naive Bayes in nproc<a class="anchor" aria-label="anchor" href="#naive-bayes-in-nproc"></a>
 </h2>
 <p>The <a href="https://cran.r-project.org/web/packages/nproc/" class="external-link">nproc</a> package
 provides Neyman-Pearson (NP) classification algorithms and NP receiver
@@ -342,7 +346,7 @@ its performance in terms of accuracy and error rates.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer>

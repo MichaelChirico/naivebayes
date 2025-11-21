@@ -2,12 +2,12 @@
 output: github_document
 ---
 
-## 1) Introduction
+## Introduction
 
 The `naivebayes` package provides a user friendly implementation of the Na&iuml;ve Bayes algorithm via formula interlace and classical combination of the matrix/data.frame containing the features and a vector with the class labels. All functions can recognize missing values, give informative warnings and more importantly - they know how to handle them. In following the basic usage of the main function  `naive_bayes()` is demonstrated. Examples with the specialized Naive Bayes classifiers can be found in [this article](https://majkamichal.github.io/naivebayes/articles/specialized_naive_bayes.html).
 
 
-## 2) Example data
+## Example data
 
 To demonstrate the usage of the `naivebayes` package, we will use an example dataset. The dataset is simulated and consists of various variables, including a class label, a binary variable, a categorical variable, a logical variable, a normally distributed variable, and a count variable.
 
@@ -36,7 +36,7 @@ tail(train)
 print(test)
 ```
 
-## 3) Formula interface
+## Formula interface
 
 The `naivebayes` package provides a convenient formula interface for training and utilizing Naïve Bayes models. In this section, we demonstrate how to use the formula interface to perform various tasks.
 
@@ -67,7 +67,7 @@ get_cond_dist(nb)
 #       with a Gaussian distribution.
 ```
 
-## 4) Matrix/data.frame and class vector
+## Matrix/data.frame and class vector
 
 In addition to the formula interface, the `naivebayes` package also allows training Naïve Bayes models using a matrix or data frame of features (X) and a vector of class labels (class). In this section, we demonstrate how to utilize this approach.
 
@@ -92,7 +92,7 @@ To obtain the posterior probabilities of each class for the test data, we use th
 By using the matrix/data.frame and class vector approach, you can directly train a Naïve Bayes model without the need for a formula interface, providing flexibility in handling data structures.
 
 
-## 5) Non-parametric estimation for continuous features
+## Non-parametric estimation for continuous features
 
 Kernel density estimation (KDE) is a technique that can be used to estimate the class conditional densities of continuous features in Naïve Bayes modeling. By default, `naive_bayes()` function assumes a Gaussian distribution for continuous features. However, you can explicitly request KDE estimation by setting the parameter `usekernel = TRUE`. KDE estimation is performed using the built-in `density()` function in R. By default, Gaussian smoothing kernel and Silverman's rule of thumb as bandwidth selector are used.
 
@@ -118,7 +118,7 @@ Next, we use the `plot()` method to visualize the class conditional densities (`
 
 Additionally, we can customize the KDE estimation by adjusting the `kernel` and `bandwidth` selection. The following sections demonstrate how to (1) change the kernel, (2) bandwidth selector, and (3) adjust the bandwidth:
 
-### 5.1) Changing kernel
+### Changing kernel
 
 In the `naive_bayes()` function, you have the flexibility to specify the smoothing kernel to be used in KDE by using the `kernel` parameter. There are seven different smoothing kernels available, each with its own characteristics and effects on the density estimation. Here are the available kernels (referenced from `help("density")`):
 
@@ -151,7 +151,7 @@ plot(nb_kde_biweight, "norm", arg.num = list(legend.cex = 0.9), prob = "conditio
 ```
 
 
-### 5.2) Changing bandwidth selector
+### Changing bandwidth selector
 
 The bandwidth selector is a critical component of KDE as it determines the width of the kernel and influences the smoothness of the estimated density function. You can specify the bandwidth selector using the `bw` parameter. Here are the available bandwidth selectors, described based on the R documentation `help("bw.nrd0")`:
 
@@ -176,7 +176,7 @@ nb_kde_SJ %prob% test
 plot(nb_kde_SJ, "norm", arg.num = list(legend.cex = 0.9), prob = "conditional")
 ```
 
-### 5.3) Adjusting bandwidth
+### Adjusting bandwidth
 
 You can further adjust the `bandwidth` by specifying a factor using the `adjust`. This allows you to additionally control the smoothness of the estimated densities.
 
@@ -190,7 +190,7 @@ plot(nb_kde_adjust, "norm", arg.num = list(legend.cex = 0.9), prob = "conditiona
 ```
 
 
-## 6) Model non-negative integers with Poisson distribution
+## Model non-negative integers with Poisson distribution
 
 Class conditional distributions of non-negative integer predictors can be modelled with Poisson distribution. This can be achieved by setting `usepoisson=TRUE` in the `naive_bayes()` function and by making sure that the variables representing counts in the dataset are of class `integer`.
 

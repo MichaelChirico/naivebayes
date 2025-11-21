@@ -2,7 +2,7 @@
 title: "Sparse Matrices"
 ---
 
-## 1) Introduction
+## Introduction
 Starting with the `0.9.7` version released in March 2020, the `naivebayes` R package introduces specialized implementations of the Naïve Bayes model that support sparse matrices. These implementations include:
 
 
@@ -15,7 +15,7 @@ Starting with the `0.9.7` version released in March 2020, the `naivebayes` R pac
 
 These specialized functions are optimized to take advantage of sparsity, which can significantly enhance computational efficiency. To leverage this capability, users can provide the functions with a matrix of class `dgCMatrix` from the excellent `Matrix`^[https://cran.r-project.org/web/packages/Matrix/index.html] package. Importantly, this new functionality has been introduced without any breaking changes and aligns with the no-dependency philosophy of the naivebayes project. Users can seamlessly incorporate sparse matrices into their Naïve Bayes modeling workflow, enhancing performance while maintaining compatibility with existing code.
 
-## 2) Usage
+## Usage
 
 In the provided example, we showcase the training of a Multinomial Naive Bayes model using a simulated sparse matrix. The code snippet demonstrates the steps involved in preparing the data, training the model, and making predictions.
 

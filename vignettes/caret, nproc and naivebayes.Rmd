@@ -2,12 +2,12 @@
 title: "Caret, nproc and naivebayes"
 ---
 
-## 1) Introduction
+## Introduction
 
 The `naive_bayes()` function, a powerful tool for classification, is readily accessible through the highly regarded [Caret](https://cran.r-project.org/web/packages/caret/index.html) package. Additionally, it can be utilized seamlessly via the [nproc](https://cran.r-project.org/web/packages/nproc/) package, providing users with alternative options. This concise documentation aims to demonstrate the basic usage of the `naive_bayes()` function in both the [Caret](https://cran.r-project.org/web/packages/caret/index.html) and [nproc](https://cran.r-project.org/web/packages/nproc/) packages.
 
 
-## 2) Naive Bayes in Caret
+## Naive Bayes in Caret
 
 The first part showcases how to train a Naive Bayes model using the `naive_bayes()` function within the `caret` interface in R. It provides an example of how to prepare the data, train the Naive Bayes model, and perform classification using the trained model. This section focuses on the core steps of training a Naive Bayes model and utilizing it for classification tasks.
 
@@ -15,7 +15,7 @@ The second part demonstrates the process of defining a tuning grid, performing r
 
 By combining these two sections, users can gain a comprehensive understanding of how to train and optimize Naive Bayes models using the `naive_bayes()` function within the `caret` interface in R.
 
-#### 2.1) Model Training with Caret
+#### Model Training with Caret
 
 The model is trained using the `caret::train()` function, specifying `"naive_bayes"` as the method and setting `usepoisson` to TRUE to handle the count variable.
 
@@ -61,7 +61,7 @@ class(nb_object)
 # nb_object
 ```
 
-#### 2.2) Parameter Tuning with Caret
+#### Parameter Tuning with Caret
 
 First, a tuning grid is defined using the `expand.grid()` function, which specifies different combinations of tuning parameters for the Naive Bayes model.
 
@@ -105,7 +105,7 @@ head(predict(naive_bayes_via_caret2, newdata = new))
 Overall, the code showcases the steps involved in defining a tuning grid, performing model training with parameter tuning, visualizing the tuning process, and applying the trained model for classification using the Naive Bayes algorithm within the caret package in R.
 
 
-## 3) Naive Bayes in nproc
+## Naive Bayes in nproc
 
 The [nproc](https://cran.r-project.org/web/packages/nproc/) package provides Neyman-Pearson (NP) classification algorithms and NP receiver operating characteristic (NP-ROC) curves, and it can be used in conjunction with the `naivebayes package`. By incorporating the `naivebayes` package within the NP classification framework, users can leverage the power of the naive Bayes algorithm for binary classification tasks while controlling type I and type II errors effectively. This integration allows practitioners to apply the NP paradigm to the naive Bayes classifier and enhance its performance in various application domains.
 

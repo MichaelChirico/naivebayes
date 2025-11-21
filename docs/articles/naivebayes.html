@@ -6,17 +6,22 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title> • naivebayes</title>
-<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
-<script src="../lightswitch.js"></script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="icon" type="”image/svg+xml”" href="../favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" sizes="any" href="../favicon.ico">
+<link rel="manifest" href="../site.webmanifest">
+<!-- mathjax math --><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script><script>
+  window.MathJax = {
+    chtml: {
+      fontURL: "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/output/chtml/fonts/woff-v2"
+    }
+  };
+</script><script src="../lightswitch.js"></script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><script src="../deps/MathJax-3.2.2/tex-chtml.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="">
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-7PD351XYFE"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -60,7 +65,6 @@
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://www.buymeacoffee.com/michalmajka" aria-label="BuyMeACoffee"><span class="fa fa-mug-hot"></span></a></li>
-<li class="nav-item"><a class="external-link nav-link" href="http://x.com/majkamichal" aria-label="X"><span class="fa fab fa-x-twitter"></span></a></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://github.com/majkamichal/naivebayes/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-lightswitch" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Light switch"><span class="fa fa-sun"></span></button>
@@ -92,7 +96,7 @@
     
     
 <div class="section level2">
-<h2 id="introduction">1) Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <p>The <code>naivebayes</code> package provides a user friendly
 implementation of the Naïve Bayes algorithm via formula interlace and
@@ -105,7 +109,7 @@ specialized Naive Bayes classifiers can be found in <a href="https://majkamichal
 article</a>.</p>
 </div>
 <div class="section level2">
-<h2 id="example-data">2) Example data<a class="anchor" aria-label="anchor" href="#example-data"></a>
+<h2 id="example-data">Example data<a class="anchor" aria-label="anchor" href="#example-data"></a>
 </h2>
 <p>To demonstrate the usage of the <code>naivebayes</code> package, we
 will use an example dataset. The dataset is simulated and consists of
@@ -164,7 +168,7 @@ classification.</p>
 <span><span class="co">## 100    A   c   FALSE -1.29414000    13</span></span></code></pre>
 </div>
 <div class="section level2">
-<h2 id="formula-interface">3) Formula interface<a class="anchor" aria-label="anchor" href="#formula-interface"></a>
+<h2 id="formula-interface">Formula interface<a class="anchor" aria-label="anchor" href="#formula-interface"></a>
 </h2>
 <p>The <code>naivebayes</code> package provides a convenient formula
 interface for training and utilizing Naïve Bayes models. In this
@@ -242,7 +246,7 @@ various tasks.</p>
 <span><span class="co">#       with a Gaussian distribution.</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="matrixdata-frame-and-class-vector">4) Matrix/data.frame and class vector<a class="anchor" aria-label="anchor" href="#matrixdata-frame-and-class-vector"></a>
+<h2 id="matrixdata-frame-and-class-vector">Matrix/data.frame and class vector<a class="anchor" aria-label="anchor" href="#matrixdata-frame-and-class-vector"></a>
 </h2>
 <p>In addition to the formula interface, the <code>naivebayes</code>
 package also allows training Naïve Bayes models using a matrix or data
@@ -283,7 +287,7 @@ directly train a Naïve Bayes model without the need for a formula
 interface, providing flexibility in handling data structures.</p>
 </div>
 <div class="section level2">
-<h2 id="non-parametric-estimation-for-continuous-features">5) Non-parametric estimation for continuous features<a class="anchor" aria-label="anchor" href="#non-parametric-estimation-for-continuous-features"></a>
+<h2 id="non-parametric-estimation-for-continuous-features">Non-parametric estimation for continuous features<a class="anchor" aria-label="anchor" href="#non-parametric-estimation-for-continuous-features"></a>
 </h2>
 <p>Kernel density estimation (KDE) is a technique that can be used to
 estimate the class conditional densities of continuous features in Naïve
@@ -332,11 +336,11 @@ Naïve Bayes modeling:</p>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Plot class conditional densities</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">nb_kde</span>, <span class="st">"norm"</span>, arg.num <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>legend.cex <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span>, prob <span class="op">=</span> <span class="st">"conditional"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="naivebayes_files/figure-html/kde-1.png" width="700"></p>
+<p><img src="naivebayes_files/figure-html/kde-1.png" class="r-plt" width="700"></p>
 <div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Plot marginal densities for each class</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">nb_kde</span>, <span class="st">"norm"</span>, arg.num <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>legend.cex <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span>, prob <span class="op">=</span> <span class="st">"marginal"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="naivebayes_files/figure-html/kde-2.png" width="700"></p>
+<p><img src="naivebayes_files/figure-html/kde-2.png" class="r-plt" width="700"></p>
 <p>In the above code, we first train a Naïve Bayes model using the
 formula interface and set <code>usekernel = TRUE</code> to enable KDE
 estimation. We then use the <code><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary()</a></code> function to obtain a
@@ -352,7 +356,7 @@ features.</p>
 sections demonstrate how to (1) change the kernel, (2) bandwidth
 selector, and (3) adjust the bandwidth:</p>
 <div class="section level3">
-<h3 id="changing-kernel">5.1) Changing kernel<a class="anchor" aria-label="anchor" href="#changing-kernel"></a>
+<h3 id="changing-kernel">Changing kernel<a class="anchor" aria-label="anchor" href="#changing-kernel"></a>
 </h3>
 <p>In the <code><a href="../reference/naive_bayes.html">naive_bayes()</a></code> function, you have the flexibility
 to specify the smoothing kernel to be used in KDE by using the
@@ -401,10 +405,10 @@ objectives.</p>
 <span><span class="co">## [5,] 0.6981859 0.3018141</span></span></code></pre>
 <div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">nb_kde_biweight</span>, <span class="st">"norm"</span>, arg.num <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>legend.cex <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span>, prob <span class="op">=</span> <span class="st">"conditional"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="naivebayes_files/figure-html/kde_kernel-1.png" width="700"></p>
+<p><img src="naivebayes_files/figure-html/kde_kernel-1.png" class="r-plt" width="700"></p>
 </div>
 <div class="section level3">
-<h3 id="changing-bandwidth-selector">5.2) Changing bandwidth selector<a class="anchor" aria-label="anchor" href="#changing-bandwidth-selector"></a>
+<h3 id="changing-bandwidth-selector">Changing bandwidth selector<a class="anchor" aria-label="anchor" href="#changing-bandwidth-selector"></a>
 </h3>
 <p>The bandwidth selector is a critical component of KDE as it
 determines the width of the kernel and influences the smoothness of the
@@ -447,10 +451,10 @@ your specific scenario.</p>
 <span><span class="co">## [5,] 0.6699161 0.3300839</span></span></code></pre>
 <div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">nb_kde_SJ</span>, <span class="st">"norm"</span>, arg.num <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>legend.cex <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span>, prob <span class="op">=</span> <span class="st">"conditional"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="naivebayes_files/figure-html/kde_bw-1.png" width="700"></p>
+<p><img src="naivebayes_files/figure-html/kde_bw-1.png" class="r-plt" width="700"></p>
 </div>
 <div class="section level3">
-<h3 id="adjusting-bandwidth">5.3) Adjusting bandwidth<a class="anchor" aria-label="anchor" href="#adjusting-bandwidth"></a>
+<h3 id="adjusting-bandwidth">Adjusting bandwidth<a class="anchor" aria-label="anchor" href="#adjusting-bandwidth"></a>
 </h3>
 <p>You can further adjust the <code>bandwidth</code> by specifying a
 factor using the <code>adjust</code>. This allows you to additionally
@@ -469,11 +473,11 @@ control the smoothness of the estimated densities.</p>
 <span><span class="co">## [5,] 0.6910385 0.3089615</span></span></code></pre>
 <div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">nb_kde_adjust</span>, <span class="st">"norm"</span>, arg.num <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>legend.cex <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span>, prob <span class="op">=</span> <span class="st">"conditional"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="naivebayes_files/figure-html/kde_adjust-1.png" width="700"></p>
+<p><img src="naivebayes_files/figure-html/kde_adjust-1.png" class="r-plt" width="700"></p>
 </div>
 </div>
 <div class="section level2">
-<h2 id="model-non-negative-integers-with-poisson-distribution">6) Model non-negative integers with Poisson distribution<a class="anchor" aria-label="anchor" href="#model-non-negative-integers-with-poisson-distribution"></a>
+<h2 id="model-non-negative-integers-with-poisson-distribution">Model non-negative integers with Poisson distribution<a class="anchor" aria-label="anchor" href="#model-non-negative-integers-with-poisson-distribution"></a>
 </h2>
 <p>Class conditional distributions of non-negative integer predictors
 can be modelled with Poisson distribution. This can be achieved by
@@ -519,11 +523,11 @@ the dataset are of class <code>integer</code>.</p>
 <div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Class conditional distributions</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">nb_pois</span>, <span class="st">"count"</span>, prob <span class="op">=</span> <span class="st">"conditional"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="naivebayes_files/figure-html/poisson-1.png" width="700"></p>
+<p><img src="naivebayes_files/figure-html/poisson-1.png" class="r-plt" width="700"></p>
 <div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Marginal distributions</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">nb_pois</span>, <span class="st">"count"</span>, prob <span class="op">=</span> <span class="st">"marginal"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="naivebayes_files/figure-html/poisson-2.png" width="700"></p>
+<p><img src="naivebayes_files/figure-html/poisson-2.png" class="r-plt" width="700"></p>
 <p>The code snippet checks if the count variable in the
 <code>train</code> dataset is of class integer. Then, it fits a Naïve
 Bayes model using the Poisson distribution by specifying
@@ -541,7 +545,7 @@ function.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer>

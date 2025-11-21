@@ -6,17 +6,22 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Specialized Naive Bayes • naivebayes</title>
-<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
-<script src="../lightswitch.js"></script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="icon" type="”image/svg+xml”" href="../favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" sizes="any" href="../favicon.ico">
+<link rel="manifest" href="../site.webmanifest">
+<!-- mathjax math --><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script><script>
+  window.MathJax = {
+    chtml: {
+      fontURL: "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/output/chtml/fonts/woff-v2"
+    }
+  };
+</script><script src="../lightswitch.js"></script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><script src="../deps/MathJax-3.2.2/tex-chtml.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Specialized Naive Bayes">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Specialized Naive Bayes">
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-7PD351XYFE"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -60,7 +65,6 @@
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://www.buymeacoffee.com/michalmajka" aria-label="BuyMeACoffee"><span class="fa fa-mug-hot"></span></a></li>
-<li class="nav-item"><a class="external-link nav-link" href="http://x.com/majkamichal" aria-label="X"><span class="fa fab fa-x-twitter"></span></a></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://github.com/majkamichal/naivebayes/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-lightswitch" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Light switch"><span class="fa fa-sun"></span></button>
@@ -92,7 +96,7 @@
     
     
 <div class="section level2">
-<h2 id="introduction">1) Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <p>The <code>naivebayes</code> package offers a comprehensive set of
 functions that implement specialized versions of the Naïve Bayes
@@ -142,7 +146,7 @@ understand the differences between the specialized and general
 approaches.</p>
 </div>
 <div class="section level2">
-<h2 id="bernoulli-naive-bayes">2) Bernoulli Naive Bayes<a class="anchor" aria-label="anchor" href="#bernoulli-naive-bayes"></a>
+<h2 id="bernoulli-naive-bayes">Bernoulli Naive Bayes<a class="anchor" aria-label="anchor" href="#bernoulli-naive-bayes"></a>
 </h2>
 <p>The Bernoulli Naive Bayes classifier is suitable for binary data. To
 demonstrate its usage, we start by simulating a dataset with binary
@@ -199,7 +203,7 @@ features. We then train the Bernoulli Naive Bayes model using the
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Visualise marginal distributions</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">bnb</span>, which <span class="op">=</span> <span class="st">"V1"</span>, prob <span class="op">=</span> <span class="st">"marginal"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="specialized_naive_bayes_files/figure-html/unnamed-chunk-1-1.png" width="700"></p>
+<p><img src="specialized_naive_bayes_files/figure-html/unnamed-chunk-1-1.png" class="r-plt" width="700"></p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Obtain model coefficients</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">bnb</span><span class="op">)</span></span></code></pre></div>
@@ -231,7 +235,7 @@ function:</strong></p>
 <span><span class="co">## [6,] 0.2230504 0.7769496</span></span></code></pre>
 </div>
 <div class="section level2">
-<h2 id="multinomial-naive-bayes">3) Multinomial Naive Bayes<a class="anchor" aria-label="anchor" href="#multinomial-naive-bayes"></a>
+<h2 id="multinomial-naive-bayes">Multinomial Naive Bayes<a class="anchor" aria-label="anchor" href="#multinomial-naive-bayes"></a>
 </h2>
 <p>Next, we explore the Multinomial Naive Bayes classifier. We simulate
 a dataset with multinomial features and train the model using the
@@ -313,7 +317,7 @@ function.</p>
 <span><span class="co">## [3,]   0.4732 0.4473</span></span></code></pre>
 </div>
 <div class="section level2">
-<h2 id="poisson-naive-bayes">4) Poisson Naive Bayes<a class="anchor" aria-label="anchor" href="#poisson-naive-bayes"></a>
+<h2 id="poisson-naive-bayes">Poisson Naive Bayes<a class="anchor" aria-label="anchor" href="#poisson-naive-bayes"></a>
 </h2>
 <p>The Poisson Naive Bayes classifier is specifically designed for count
 data. We simulate count data and train the model using the
@@ -357,7 +361,7 @@ obtain model coefficients.</p>
 <div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Visualise marginal distributions</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">pnb</span>, which <span class="op">=</span> <span class="st">"V1"</span>, prob <span class="op">=</span> <span class="st">"marginal"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="specialized_naive_bayes_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
+<p><img src="specialized_naive_bayes_files/figure-html/unnamed-chunk-6-1.png" class="r-plt" width="700"></p>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Obtain model coefficients</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">pnb</span><span class="op">)</span></span></code></pre></div>
@@ -386,7 +390,7 @@ function:</strong></p>
 <span><span class="co">## [6,] 0.4771426 0.5228574</span></span></code></pre>
 </div>
 <div class="section level2">
-<h2 id="gaussian-naive-bayes">5) Gaussian Naive Bayes<a class="anchor" aria-label="anchor" href="#gaussian-naive-bayes"></a>
+<h2 id="gaussian-naive-bayes">Gaussian Naive Bayes<a class="anchor" aria-label="anchor" href="#gaussian-naive-bayes"></a>
 </h2>
 <p>The Gaussian Naive Bayes classifier is discussed next. We use the
 famous <code>Iris</code><a class="footnote-ref" tabindex="0" data-bs-toggle="popover" data-bs-content='&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Iris_flower_data_set" class="external-link uri"&gt;https://en.wikipedia.org/wiki/Iris_flower_data_set&lt;/a&gt;&lt;/p&gt;'><sup>1</sup></a> dataset and train the Gaussian Naive Bayes
@@ -425,7 +429,7 @@ obtain parameter estimates. <strong>Data:</strong></p>
 <div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Visualise class conditional distributions</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">gnb</span>, which <span class="op">=</span> <span class="st">"Sepal.Width"</span>, prob <span class="op">=</span> <span class="st">"conditional"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="specialized_naive_bayes_files/figure-html/unnamed-chunk-9-1.png" width="700"></p>
+<p><img src="specialized_naive_bayes_files/figure-html/unnamed-chunk-9-1.png" class="r-plt" width="700"></p>
 <div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Obtain parameter estimates</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">gnb</span><span class="op">)</span></span></code></pre></div>
@@ -460,7 +464,7 @@ function:</strong></p>
 <span><span class="co">## [6,]      1 2.717732e-14 4.344285e-21</span></span></code></pre>
 </div>
 <div class="section level2">
-<h2 id="non-parametric-naive-bayes">6) Non-Parametric Naive Bayes<a class="anchor" aria-label="anchor" href="#non-parametric-naive-bayes"></a>
+<h2 id="non-parametric-naive-bayes">Non-Parametric Naive Bayes<a class="anchor" aria-label="anchor" href="#non-parametric-naive-bayes"></a>
 </h2>
 <p>Lastly, we explore the Non-Parametric Naive Bayes classifier. Again,
 using the <code>Iris</code><a class="footnote-ref" tabindex="0" data-bs-toggle="popover" data-bs-content='&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Iris_flower_data_set" class="external-link uri"&gt;https://en.wikipedia.org/wiki/Iris_flower_data_set&lt;/a&gt;&lt;/p&gt;'><sup>2</sup></a> dataset, we train the model using the
@@ -487,7 +491,7 @@ section.</p>
 <span><span class="co">## [6,]      1 3.746571e-09 5.848304e-09</span></span></code></pre>
 <div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">nnb</span>, which <span class="op">=</span> <span class="st">"Sepal.Width"</span>, prob <span class="op">=</span> <span class="st">"conditional"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="specialized_naive_bayes_files/figure-html/unnamed-chunk-12-1.png" width="700"></p>
+<p><img src="specialized_naive_bayes_files/figure-html/unnamed-chunk-12-1.png" class="r-plt" width="700"></p>
 <p><strong>Equivalent calculation with general naive_bayes
 function:</strong></p>
 <div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
@@ -513,7 +517,7 @@ function:</strong></p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer>

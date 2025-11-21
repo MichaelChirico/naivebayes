@@ -2,7 +2,7 @@
 title: "Specialized Naive Bayes"
 ---
 
-## 1) Introduction
+## Introduction
 
 The `naivebayes` package offers a comprehensive set of functions that implement specialized versions of the Na&iuml;ve Bayes classifier. In this article, we explore these functions and provide a detailed overview of their basic usage.
 
@@ -23,7 +23,7 @@ Throughout this article, we will dive into each of these functions providing ill
 We will also show equivalent calculations using the general `naive_bayes()` function, allowing you to compare and understand the differences between the specialized and general approaches.
 
 
-## 2) Bernoulli Naive Bayes
+## Bernoulli Naive Bayes
 
 The Bernoulli Naive Bayes classifier is suitable for binary data. To demonstrate its usage, we start by simulating a dataset with binary features. We then train the Bernoulli Naive Bayes model using the `bernoulli_naive_bayes()` function. 
 
@@ -69,7 +69,7 @@ head(nb %prob% df)
 
 
 
-## 3) Multinomial Naive Bayes
+## Multinomial Naive Bayes
 
 Next, we explore the Multinomial Naive Bayes classifier. We simulate a dataset with multinomial features and train the model using the `multinomial_naive_bayes()` function. We discuss the summary of the model, perform classification, compute posterior probabilities, and examine parameter estimates. Note that this specialized model is **not** available in the general `naive_bayes()` function.
 
@@ -112,7 +112,7 @@ coef(mnb)
 round(cbind(non_spam = word_prob_non_spam, spam = word_prob_spam), 4)
 ```
 
-## 4) Poisson Naive Bayes
+## Poisson Naive Bayes
 
 The Poisson Naive Bayes classifier is specifically designed for count data. We simulate count data and train the model using the `poisson_naive_bayes()` function. We analyze the summary of the model, perform prediction, visualize marginal distributions, and obtain model coefficients. 
 
@@ -150,7 +150,7 @@ head(predict(nb2, type = "prob"))
 
 
 
-## 5) Gaussian Naive Bayes
+## Gaussian Naive Bayes
 
 The Gaussian Naive Bayes classifier is discussed next. We use the famous `Iris`^[https://en.wikipedia.org/wiki/Iris_flower_data_set] dataset and train the Gaussian Naive Bayes model using the `gaussian_naive_bayes()` function. We summarize the model, visualize class conditional distributions, and obtain parameter estimates. 
 **Data:**
@@ -185,7 +185,7 @@ head(predict(nb3, newdata = M, type = "prob"))
 ```
 
 
-## 6) Non-Parametric Naive Bayes
+## Non-Parametric Naive Bayes
 
 Lastly, we explore the Non-Parametric Naive Bayes classifier. Again, using the `Iris`^[https://en.wikipedia.org/wiki/Iris_flower_data_set] dataset, we train the model using the `nonparametric_naive_bayes()` function. We will visualize the class conditional distributions, perform classification, so that it can be compared to the Gaussian Naive Bayes demonstrated in a previous section.
 

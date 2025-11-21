@@ -34,10 +34,6 @@ navbar:
       icon: fa-mug-hot
       href: https://www.buymeacoffee.com/michalmajka
       aria-label: BuyMeACoffee
-    x:
-      icon: fab fa-x-twitter
-      href: http://x.com/majkamichal
-      aria-label: X
     articles:
       text: Articles
       menu:
